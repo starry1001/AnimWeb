@@ -6,6 +6,38 @@ Animation is pervasive on the Web, the CSS animation property alone appears on o
 
 ![AnimWeb-Bench Overview](assets/overview.png)
 
+## 🛠️ Setup
+
+### 1. Environment Setup
+
+Install Node.js >= 22.12.0 (with npm) and system FFmpeg, ensuring `ffmpeg` and `ffprobe` are available on your `PATH` for evaluation. Then run:
+
+```bash
+git clone https://github.com/starry1001/AnimWeb.git
+cd AnimWeb
+pip install -r requirements.txt
+npm install
+```
+
+`npm install` installs [Puppeteer](https://github.com/puppeteer/puppeteer) and [ffmpeg-static](https://github.com/eugeneware/ffmpeg-static), then downloads Chrome for headless recording.
+
+### 2. Dataset Preparation
+
+Download our dataset from [Huggingface Dataset](https://huggingface.co/datasets/starry1001/AnimWeb-Bench/tree/main) and place the extracted samples under `./data`. Each sample directory follows this structure:
+
+```text
+AnimWeb/
+└── data/
+    ├── 1/
+    │   ├── assets/             # Original webpage assets
+    │   ├── stitched_assets/    # Stitched asset images
+    │   ├── ground_truth.html   # Reference webpage source
+    │   ├── ground_truth.mp4    # Reference animation video
+    │   └── metadata.json       # Sample ID and source URL
+    ├── 2/
+    └── ...
+```
+
 ## 🚀 Generation
 
 ```bash
@@ -31,6 +63,30 @@ python evaluate.py \
   --device 0
 ```
 
-An illustration of UI component detection and tracking across frames of an animated webpage.
-
-[![UI component trajectories](assets/ui_component_trajectories.gif)](assets/ui_component_trajectories.mp4)
+<table align="center">
+  <tr>
+    <td align="center" width="520" style="padding: 20px; background: #ffffff; border: 1px solid #e6e8ec; border-radius: 10px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.06);">
+      <p><strong>UI Component Detection and Tracking</strong></p>
+      <video
+        width="480"
+        style="max-width: 100%; height: auto; border-radius: 6px;"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        preload="metadata"
+        poster="assets/ui_component_trajectories.gif"
+        aria-label="UI component detection and tracking across frames"
+      >
+        <source src="assets/ui_component_trajectories.mp4" type="video/mp4">
+        <a href="assets/ui_component_trajectories.mp4">
+          <img src="assets/ui_component_trajectories.gif" alt="UI component trajectories across animation frames" width="480">
+        </a>
+      </video>
+      <p style="margin: 15px 0 0; color: #999; line-height: 1.6;">
+        <sub>An illustration of UI component detection and tracking<br>across frames of an animated webpage.</sub>
+      </p>
+    </td>
+  </tr>
+</table>
