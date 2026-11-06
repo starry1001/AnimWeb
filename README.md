@@ -65,26 +65,12 @@ python evaluate.py \
 
 <table align="center">
   <tr>
-    <td align="center" width="520" style="padding: 20px; background: #ffffff; border: 1px solid #e6e8ec; border-radius: 10px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.06);">
+    <td align="center" width="520">
       <p><strong>UI Component Detection and Tracking</strong></p>
-      <video
-        width="480"
-        style="max-width: 100%; height: auto; border-radius: 6px;"
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-        preload="metadata"
-        poster="assets/ui_component_trajectories.gif"
-        aria-label="UI component detection and tracking across frames"
-      >
-        <source src="assets/ui_component_trajectories.mp4" type="video/mp4">
-        <a href="assets/ui_component_trajectories.mp4">
-          <img src="assets/ui_component_trajectories.gif" alt="UI component trajectories across animation frames" width="480">
-        </a>
-      </video>
-      <p style="margin: 15px 0 0; color: #999; line-height: 1.6;">
+      <a href="assets/ui_component_trajectories.mp4">
+        <img src="assets/ui_component_trajectories.gif" alt="UI component trajectories across animation frames; click to open the MP4 video" width="480">
+      </a>
+      <p>
         <sub>An illustration of UI component detection and tracking<br>across frames of an animated webpage.</sub>
       </p>
     </td>
